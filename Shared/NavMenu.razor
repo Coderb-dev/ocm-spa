@@ -1,0 +1,110 @@
+﻿		<header id="header" class="full-header transparent-header dark">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo">
+							<a href="index.html" class="standard-logo" data-dark-logo="images/OCMHorizontalLogo.png"><img src="images/OCMHorizontalLogo.png" alt="Old Code Monkey Logo"></a>
+							@* <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a> *@
+						</div><!-- #logo end -->
+@* 
+						<div class="header-misc">
+
+
+
+						</div> *@
+
+						<div id="primary-menu-trigger">
+							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+						</div>
+
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu">
+
+							<ul class="menu-container">
+								<li class="menu-item">
+                                    <NavLink class="menu-link" href="" Match="NavLinkMatch.All">
+                                        Home
+                                    </NavLink>                                    
+									@* <a class="menu-link" href="index.html"><div>Home</div></a> *@
+								</li>
+								<li class="menu-item">
+                                    <NavLink class="menu-link" href="/About" Match="NavLinkMatch.All">
+                                        About
+                                    </NavLink>
+                                </li>                                
+								<li class="menu-item">
+									<a class="menu-link" href="#"><div>Projects</div></a>
+									<ul class="sub-menu-container">
+										<li class="menu-item">
+											<a class="menu-link" href="#"><div><i class="icon-stack"></i>Sliders</div></a>
+											<ul class="sub-menu-container">
+												<li class="menu-item">
+													<a class="menu-link" href="slider-revolution.html"><div>Revolution Slider</div></a>
+													<ul class="sub-menu-container">
+														<li class="menu-item">
+															<a class="menu-link" href="rs-demos.html"><div>Premium Templates</div></a>
+														</li>
+													</ul>
+												</li>
+												<li class="menu-item">
+													<a class="menu-link" href="slider-canvas.html"><div>Canvas Slider</div></a>
+													<ul class="sub-menu-container">
+														<li class="menu-item">
+															<a class="menu-link" href="slider-canvas.html"><div>Full Width</div></a>
+														</li>
+														<li class="menu-item">
+															<a class="menu-link" href="slider-canvas-fade.html"><div>Fade Transition</div></a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+						<form class="top-search-form" action="search.html" method="get">
+							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
+						</form>
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+
+
+@* <div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Old Code Monkey</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+    </ul>
+</div> *@
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
