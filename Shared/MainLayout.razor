@@ -1,4 +1,6 @@
 @inherits LayoutComponentBase
+@inject IJSRuntime jsRuntime
+@inject ocm_spa.Services.IInterop Interop;
 
 <div id="wrapper" class="clearfix">
     <NavMenu />
@@ -8,4 +10,12 @@
     <FooterLayout />
 </div>
 
-            
+@code {
+    protected override async void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            await Interop.InitializeBootstrap("");
+        }
+    }
+}            
